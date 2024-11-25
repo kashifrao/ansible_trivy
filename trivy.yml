@@ -1,0 +1,11 @@
+
+- name: Remote Trivy RPM install with yum
+  yum: name=https://github.com/aquasecurity/trivy/releases/download/v0.57.0/trivy_0.57.0_Linux-64bit.rpm
+  become_user: root
+
+- name: Install Trivy Server
+  yum:
+    name: trivy 
+    state: present
+  become_user: root
+
